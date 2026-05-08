@@ -10,233 +10,20 @@ export type Database = {
   // Allows to automatically instantiate createClient with right options
   // instead of createClient<Database, { PostgrestVersion: 'XX' }>(URL, KEY)
   __InternalSupabase: {
-    PostgrestVersion: "14.1"
+    PostgrestVersion: "14.5"
   }
   public: {
     Tables: {
-      links: {
-        Row: {
-          button_bg_color: string | null
-          button_border_radius: string | null
-          button_text_color: string | null
-          created_at: string
-          icon: string | null
-          id: string
-          is_active: boolean
-          link_type: string | null
-          position: number
-          style: string | null
-          thumbnail_url: string | null
-          title: string
-          updated_at: string
-          url: string
-          user_id: string
-        }
-        Insert: {
-          button_bg_color?: string | null
-          button_border_radius?: string | null
-          button_text_color?: string | null
-          created_at?: string
-          icon?: string | null
-          id?: string
-          is_active?: boolean
-          link_type?: string | null
-          position?: number
-          style?: string | null
-          thumbnail_url?: string | null
-          title: string
-          updated_at?: string
-          url: string
-          user_id: string
-        }
-        Update: {
-          button_bg_color?: string | null
-          button_border_radius?: string | null
-          button_text_color?: string | null
-          created_at?: string
-          icon?: string | null
-          id?: string
-          is_active?: boolean
-          link_type?: string | null
-          position?: number
-          style?: string | null
-          thumbnail_url?: string | null
-          title?: string
-          updated_at?: string
-          url?: string
-          user_id?: string
-        }
-        Relationships: []
-      }
-      profiles: {
-        Row: {
-          avatar_url: string | null
-          banner_crop_offset_y: number | null
-          banner_original_url: string | null
-          banner_url: string | null
-          bio: string | null
-          created_at: string
-          display_name: string | null
-          global_background_color: string | null
-          global_background_image: string | null
-          global_button_bg_color: string | null
-          global_button_border_radius: string | null
-          global_button_style: string | null
-          global_button_text_color: string | null
-          handle: string | null
-          id: string
-          template_slug: string | null
-          title_color: string | null
-          title_font: string | null
-          title_size: string | null
-          updated_at: string
-          user_id: string
-          username: string
-        }
-        Insert: {
-          avatar_url?: string | null
-          banner_crop_offset_y?: number | null
-          banner_original_url?: string | null
-          banner_url?: string | null
-          bio?: string | null
-          created_at?: string
-          display_name?: string | null
-          global_background_color?: string | null
-          global_background_image?: string | null
-          global_button_bg_color?: string | null
-          global_button_border_radius?: string | null
-          global_button_style?: string | null
-          global_button_text_color?: string | null
-          handle?: string | null
-          id?: string
-          template_slug?: string | null
-          title_color?: string | null
-          title_font?: string | null
-          title_size?: string | null
-          updated_at?: string
-          user_id: string
-          username: string
-        }
-        Update: {
-          avatar_url?: string | null
-          banner_crop_offset_y?: number | null
-          banner_original_url?: string | null
-          banner_url?: string | null
-          bio?: string | null
-          created_at?: string
-          display_name?: string | null
-          global_background_color?: string | null
-          global_background_image?: string | null
-          global_button_bg_color?: string | null
-          global_button_border_radius?: string | null
-          global_button_style?: string | null
-          global_button_text_color?: string | null
-          handle?: string | null
-          id?: string
-          template_slug?: string | null
-          title_color?: string | null
-          title_font?: string | null
-          title_size?: string | null
-          updated_at?: string
-          user_id?: string
-          username?: string
-        }
-        Relationships: []
-      }
-      push_subscriptions: {
-        Row: {
-          auth: string
-          created_at: string | null
-          endpoint: string
-          id: string
-          p256dh: string
-          user_id: string
-        }
-        Insert: {
-          auth: string
-          created_at?: string | null
-          endpoint: string
-          id?: string
-          p256dh: string
-          user_id: string
-        }
-        Update: {
-          auth?: string
-          created_at?: string | null
-          endpoint?: string
-          id?: string
-          p256dh?: string
-          user_id?: string
-        }
-        Relationships: []
-      }
-      qr_codes: {
-        Row: {
-          created_at: string | null
-          id: string
-          label: string | null
-          style: string | null
-          url: string
-          user_id: string
-        }
-        Insert: {
-          created_at?: string | null
-          id?: string
-          label?: string | null
-          style?: string | null
-          url: string
-          user_id: string
-        }
-        Update: {
-          created_at?: string | null
-          id?: string
-          label?: string | null
-          style?: string | null
-          url?: string
-          user_id?: string
-        }
-        Relationships: []
-      }
-      user_roles: {
-        Row: {
-          created_at: string
-          id: string
-          role: Database["public"]["Enums"]["app_role"]
-          user_id: string
-        }
-        Insert: {
-          created_at?: string
-          id?: string
-          role?: Database["public"]["Enums"]["app_role"]
-          user_id: string
-        }
-        Update: {
-          created_at?: string
-          id?: string
-          role?: Database["public"]["Enums"]["app_role"]
-          user_id?: string
-        }
-        Relationships: []
-      }
+      [_ in never]: never
     }
     Views: {
       [_ in never]: never
     }
     Functions: {
-      get_user_role: {
-        Args: { _user_id: string }
-        Returns: Database["public"]["Enums"]["app_role"]
-      }
-      has_role: {
-        Args: {
-          _role: Database["public"]["Enums"]["app_role"]
-          _user_id: string
-        }
-        Returns: boolean
-      }
+      [_ in never]: never
     }
     Enums: {
-      app_role: "admin" | "moderator" | "user"
+      [_ in never]: never
     }
     CompositeTypes: {
       [_ in never]: never
@@ -363,8 +150,6 @@ export type CompositeTypes<
 
 export const Constants = {
   public: {
-    Enums: {
-      app_role: ["admin", "moderator", "user"],
-    },
+    Enums: {},
   },
 } as const
